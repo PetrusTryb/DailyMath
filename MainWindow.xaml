@@ -1,0 +1,64 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DailyMatemaks"
+        xmlns:Properties="clr-namespace:DailyMatemaks.Properties" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="DailyMatemaks.MainWindow"
+        mc:Ignorable="d"
+        Title="DailyMath" Height="635.6" Width="653.6" ResizeMode="CanMinimize" Closing="Window_Closing">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF887FAF" Offset="0"/>
+            <GradientStop Color="#FF5D5096" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,3.8,0">
+        <Image x:Name="image" Height="196" Margin="0,0,0.4,0" VerticalAlignment="Top" Source="dailymath_logo.png" Stretch="Fill"/>
+        <GroupBox x:Name="groupBox" Header="Limity czasowe dla pytań" HorizontalAlignment="Left" Height="100" Margin="10,306,0,0" VerticalAlignment="Top" Width="311" Foreground="White">
+            <Grid HorizontalAlignment="Left" Height="90" Margin="0,0,-1.8,-12.4" VerticalAlignment="Top" Width="301">
+                <Label x:Name="label4" Content="Łatwych:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="label5" Content="Średnich: " HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="label6" Content="Trudnych:" HorizontalAlignment="Left" Margin="0,52,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="EasyLimit" HorizontalAlignment="Left" Height="18" Margin="61,4,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="White" TextChanged="EasyLimit_TextChanged"/>
+                <TextBox x:Name="MediumLimit" HorizontalAlignment="Left" Height="18" Margin="61,30,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120" Foreground="White" Background="{x:Null}" TextChanged="MediumLimit_TextChanged"/>
+                <TextBox x:Name="HardLimit" HorizontalAlignment="Left" Height="18" Margin="61,56,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="White" TextChanged="HardLimit_TextChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Rodzaje zadań" HorizontalAlignment="Left" Height="100" Margin="326,201,0,0" VerticalAlignment="Top" Width="311" Foreground="White">
+            <Grid HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="301" Margin="0,0,-1.8,-3.4">
+                <CheckBox x:Name="checkBoxAdd" Content="Dodawanie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="295" Foreground="White" Margin="0,5,0,0" Checked="checkBoxAdd_Checked" Unchecked="checkBoxAdd_Unchecked"/>
+                <CheckBox x:Name="checkBoxSubstract" Content="Odejmowanie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="295" Foreground="White" Margin="0,25,0,0" Checked="checkBoxSubstract_Checked" Unchecked="checkBoxSubstract_Unchecked"/>
+                <CheckBox x:Name="checkBoxMultiply" Content="Mnożenie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="295" Foreground="White" Margin="0,45,0,0" Checked="checkBoxMultiply_Checked" Unchecked="checkBoxMultiply_Unchecked"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="buttonSolveNow" Content="Rozpocznij trening" Margin="20,555,20.2,0" VerticalAlignment="Top" Height="41" Background="#FF7266A2" Foreground="White" Click="buttonSolveNow_Click" FontWeight="Bold"/>
+        <GroupBox x:Name="groupBox2" Header="Ilość pytań" HorizontalAlignment="Left" Height="100" Margin="10,201,0,0" VerticalAlignment="Top" Width="311" Foreground="White">
+            <Grid HorizontalAlignment="Left" Height="90" Margin="0,0,-1.8,-12.4" VerticalAlignment="Top" Width="301">
+                <Label x:Name="label1" Content="Łatwych:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="label2" Content="Średnich: " HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="label3" Content="Trudnych:" HorizontalAlignment="Left" Margin="0,52,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <TextBox x:Name="EasyCount" HorizontalAlignment="Left" Height="18" Margin="61,4,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="White" TextChanged="EasyCount_TextChanged"/>
+                <TextBox x:Name="MediumCount" HorizontalAlignment="Left" Height="18" Margin="61,30,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="120" Foreground="White" Background="{x:Null}" TextChanged="MediumCount_TextChanged"/>
+                <TextBox x:Name="HardCount" HorizontalAlignment="Left" Height="18" Margin="61,56,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="White" TextChanged="HardCount_TextChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox3" Header="Moje dane" HorizontalAlignment="Left" Height="100" Margin="326,306,0,0" VerticalAlignment="Top" Width="307" Foreground="White">
+            <Grid HorizontalAlignment="Left" Height="80" Margin="0,0,-1.8,-2.4" VerticalAlignment="Top" Width="297">
+                <Button x:Name="exportButton" Content="Eksportuj historię" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Width="282" Background="#FF887FAF" Foreground="White" Click="exportButton_Click"/>
+                <Button x:Name="defaultsButton" Content="Przywróć ustawienia domyślne" HorizontalAlignment="Left" Margin="5,6,0,0" VerticalAlignment="Top" Width="282" Foreground="White" Background="#FFAFAF7F" Click="defaultsButton_Click"/>
+                <Button x:Name="clearButton" Content="Wyczyść historię" HorizontalAlignment="Left" Margin="5,54,0,0" VerticalAlignment="Top" Width="282" Background="#FFAF7F7F" Foreground="White" Click="clearButton_Click"/>
+            </Grid>
+        </GroupBox>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="139" Margin="20,411,20.2,0" VerticalAlignment="Top" Width="603" Background="White">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="" DisplayMemberBinding="{Binding Icon}"/>
+                    <GridViewColumn Header="Pytanie" DisplayMemberBinding="{Binding Question}"/>
+                    <GridViewColumn Header="Odpowiedź" DisplayMemberBinding="{Binding ExpectedAnswer}"/>
+                    <GridViewColumn Header="Czas odpowiedzi" DisplayMemberBinding="{Binding Time}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

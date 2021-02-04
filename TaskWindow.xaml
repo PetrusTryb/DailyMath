@@ -1,0 +1,22 @@
+﻿<Window x:Class="DailyMatemaks.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DailyMatemaks"
+        mc:Ignorable="d"
+        Title="Zadanko dla Ciebie" Height="450" Width="800" Foreground="White" ResizeMode="CanMinimize" Closing="Window_Closing">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF887FAF" Offset="0"/>
+            <GradientStop Color="#FF5D5096" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="QuestionLabel" Content="???" Margin="10,10,9.6,0" VerticalAlignment="Top" Height="107" Foreground="White" FontSize="72"/>
+        <TextBox x:Name="Answer" HorizontalAlignment="Left" Height="104" Margin="244,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="White" FontSize="48" TextChanged="Answer_TextChanged" MaxLength="9"/>
+        <Label x:Name="label" Content="Tu wpisz odpowiedź" HorizontalAlignment="Left" Margin="244,279,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic"/>
+        <ProgressBar x:Name="timeIndicator" HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0"/>
+
+    </Grid>
+</Window>
