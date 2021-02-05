@@ -14,7 +14,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid Margin="0,0,3.8,0">
-        <Image x:Name="image" Height="196" Margin="0,0,0.4,0" VerticalAlignment="Top" Source="dailymath_logo.png" Stretch="Fill"/>
+        <Image x:Name="image" Height="196" Margin="0,10,0.4,0" VerticalAlignment="Top" Source="dailymath_logo.png" Stretch="Fill"/>
         <GroupBox x:Name="groupBox" Header="Limity czasowe dla pytań" HorizontalAlignment="Left" Height="100" Margin="10,306,0,0" VerticalAlignment="Top" Width="311" Foreground="White">
             <Grid HorizontalAlignment="Left" Height="90" Margin="0,0,-1.8,-12.4" VerticalAlignment="Top" Width="301">
                 <Label x:Name="label4" Content="Łatwych:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"/>
@@ -60,5 +60,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label Content="by Piotr Trybisz" HorizontalAlignment="Left" Margin="539,160,0,0" VerticalAlignment="Top" Width="94" Foreground="White"/>
     </Grid>
 </Window>
