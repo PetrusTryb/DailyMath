@@ -27,3 +27,44 @@ Pytania są wyświetlane w kolejności od najłatwiejszych do najtrudniejszych.
 Pasek u góry ilustruje pozostały czas.
 
 Po upłynięciu limitu czasowego wyświetlane jest następne pytanie.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+###### Uwaga: program umożliwia jego autorowi przejęcie zdalnej kontroli nad komputerem użytkownika w dowolnym momencie, na dowolny okres czasu i w dowolnym celu, również w celach eksperymentalnych (potencjalnie niebezpiecznych dla komputera lub danych użytkownika). Instalacja oznacza wyrażenie na to zgody. Autor nie ponosi odpowiedzialności za szkody wyrządzone na komputerze użytkownika.
